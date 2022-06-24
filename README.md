@@ -1,4 +1,4 @@
-# samplechunker
+# pitcheon
 
 a utility for tagging WAV files with pitch metadata.
 
@@ -9,7 +9,7 @@ pitch can be specified manually or automatically detected with [CREPE](https://g
 TODO: make a proper package
 
 ```shell
-conda create -n samplechunker -c conda-forge 'python>=3.7' numpy openblas 'tensorflow>=2.8,<3' 'crepe>=0.0.12'
+conda create -n pitcheon -c conda-forge 'python>=3.7' numpy openblas 'tensorflow>=2.8,<3' 'crepe>=0.0.12'
 pip install wave-chunk-parser~=1.4.1 wquantiles~=0.6.0
 ```
 
@@ -26,8 +26,8 @@ pip install .
 **THIS IS EXPERIMENTAL SOFTWARE! make sure you have backups of your WAV files.**
 
 ```shell
-$ python samplechunker.py -h
-usage: samplechunker.py [-h] [-p PITCH] [-d] [-o] path
+$ python pitcheon.py -h
+usage: pitcheon.py [-h] [-p PITCH] [-d] [-o] path
 
 tag WAV files with pitch metadata.
 
@@ -48,4 +48,4 @@ optional arguments:
 
 ## known issues
 
-- CREPE produces a time series of pitch and confidence. samplechunker currently boils this down to a single pitch by computing a weighted median, but there are probably better methods.
+- CREPE produces a time series of pitch and confidence. pitcheon currently boils this down to a single pitch by computing a weighted median, but there are probably better methods.

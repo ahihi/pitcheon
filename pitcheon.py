@@ -10,8 +10,8 @@ import numpy as np
 from scipy.io import wavfile
 from wave_chunk_parser.chunks import RiffChunk, GenericChunk
 
-from samplechunker import pitch
-from samplechunker import util
+from pitcheon import pitch
+from pitcheon import util
 
 def print_err(*args, **kwargs):
   print(*args, file=sys.stderr, **kwargs)
