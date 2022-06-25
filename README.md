@@ -6,11 +6,18 @@ pitch can be specified manually or automatically detected with [CREPE](https://g
 
 ## installation
 
-TODO: make a proper package
+in theory:
 
 ```shell
+pip install .
+```
+
+in practice... tensorflow stuff seems to work better when installed by conda:
+
+```
 conda create -n pitcheon -c conda-forge 'python>=3.7' numpy openblas 'tensorflow>=2.8,<3' 'crepe>=0.0.12'
-pip install wave-chunk-parser~=1.4.1 wquantiles~=0.6.0
+conda activate pitcheon
+pip install .
 ```
 
 note: `wave-chunk-parser` 1.4.1 has a [bug](https://github.com/steelegbr/wave-chunk-parser/issues/169) that causes invalid WAV data to be written when processing files containing odd-length chunks. until this is fixed, you can use [my fork](https://github.com/ahihi/wave-chunk-parser/tree/word-align-chunks) instead:
@@ -18,6 +25,7 @@ note: `wave-chunk-parser` 1.4.1 has a [bug](https://github.com/steelegbr/wave-ch
 ```shell
 git clone git@github.com:ahihi/wave-chunk-parser.git
 cd wave-chunk-parser
+git checkout word-align-chunks
 pip install .
 ```
 
@@ -26,8 +34,11 @@ pip install .
 **THIS IS EXPERIMENTAL SOFTWARE! make sure you have backups of your WAV files.**
 
 ```shell
-$ python pitcheon.py -h
-usage: pitcheon.py [-h] [-p PITCH] [-d] [-o] path
+pitcheon --help
+```
+
+```
+usage: pitcheon [-h] [-p PITCH] [-d] [-o] path
 
 tag WAV files with pitch metadata.
 
