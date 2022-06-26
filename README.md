@@ -20,15 +20,6 @@ conda activate pitcheon
 pip install .
 ```
 
-note: `wave-chunk-parser` 1.4.1 has a [bug](https://github.com/steelegbr/wave-chunk-parser/issues/169) that causes invalid WAV data to be written when processing files containing odd-length chunks. until this is fixed, you can use [my fork](https://github.com/ahihi/wave-chunk-parser/tree/word-align-chunks) instead:
-
-```shell
-git clone git@github.com:ahihi/wave-chunk-parser.git
-cd wave-chunk-parser
-git checkout word-align-chunks
-pip install .
-```
-
 ## usage
 
 **THIS IS EXPERIMENTAL SOFTWARE! make sure you have backups of your WAV files.**

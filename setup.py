@@ -24,7 +24,7 @@ setup(
     "numpy~=1.21",
     "tensorflow>=2.8,<3",
     "crepe>=0.0.12",
-    "wave-chunk-parser~=1.4.1",
+    "wave-chunk-parser~=1.4.2",
     "wquantiles~=0.6.0"
   ]
 )
