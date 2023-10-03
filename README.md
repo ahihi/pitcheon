@@ -6,10 +6,12 @@ pitch can be specified manually or automatically detected with [CREPE](https://g
 
 ## installation
 
+### with pitch detection
+
 in theory:
 
 ```shell
-pip install .
+pip install .[crepe]
 ```
 
 in practice... tensorflow stuff seems to work better when installed by conda:
@@ -17,6 +19,12 @@ in practice... tensorflow stuff seems to work better when installed by conda:
 ```
 conda create -n pitcheon -c conda-forge 'python>=3.7' numpy openblas 'tensorflow>=2.8,<3' 'crepe>=0.0.12'
 conda activate pitcheon
+pip install .[crepe]
+```
+
+### without pitch detection
+
+```shell
 pip install .
 ```
 

@@ -2,7 +2,6 @@ import io
 import math
 import re
 
-import crepe
 import numpy as np
 import scipy
 import wquantiles
@@ -112,6 +111,7 @@ class CrepePitch:
     return cls()
     
   def detect(self, audio, sr):
+    import crepe
     time, frequency, confidence, activation = crepe.predict(audio, sr, viterbi=True)
     a = np.column_stack((time, frequency, confidence))
     # f = io.StringIO()
